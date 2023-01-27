@@ -85,4 +85,4 @@ namespace Baekjoon;
 // Array.ConvertAll
 // ConvertAll은 전달인자(argument)로 사용되는 배열형(ArrayType) 입력하고, 전달인자로 변환하고자 하는 배열(Array)와 형변환 함수 "Convert."를 입력
 
-//
+// 10
