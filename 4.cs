@@ -136,26 +136,81 @@
 //}
 
 // 3052. 나머지
+//public class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        int[] num = new int[10]; // 숫자 10개
+//        for (int i = 0; i < num.Length; i++)
+//        {
+//            // 42의 나머지를 저장
+//            num[i] = int.Parse(Console.ReadLine()) % 42;
+//        }
+
+//        Console.WriteLine(num.Distinct().Count());
+//    }
+//}
+//-----------------------------
+// Distinct(): 중복 값을 제거
+
+// 1546. 평균
+//public class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        //개수 받기
+//        int count = int.Parse(Console.ReadLine());
+//        string[] num = Console.ReadLine().Split();
+//        float[] score = Array.ConvertAll(num, float.Parse);
+//        float max = score.Max(); // 최대값
+//        float sum=0; // 더해줄 값
+//        for (int i =0; i < num.Length; i++)
+//        {
+//            // 배열에 점수/최대값*100
+//            score[i] = score[i]/ max * 100;
+//            sum += score[i];
+//        }
+
+//        // 새로운 평균 구하기
+//        double average = sum / count;
+//        Console.WriteLine(average);
+//    }
+//}
+
+// 8958. OX퀴즈
 public class Program
 {
     static void Main(string[] args)
     {
-        int[] num = new int[10]; // 숫자 10개
-        int[] div = new int[42]; // 42의 나머지
-        int count=0;
-        for (int i = 0; i < num.Length; i++)
+        // 케이스의 개수
+        int num = int.Parse(Console.ReadLine());
+        // 각각의 점수
+        int score=0;
+        // 합
+        int sum =0;
+        int[] p = new int[num];    for (int i = 0; i < num; i++) 
         {
-            num[i] = int.Parse(Console.ReadLine());
-            div[i] = num[i] % 42;
-            for (int j = 0; j < 42; j++)
+            // 개수만큼 문자열 받기
+            string s = Console.ReadLine();
+            for(int j = 0; j < s.Length; j++)
             {
-                if (div[i] == j)  // i와 비교해서 나머지가 있다면
+                score = 0;
+                if (s[j] == 'O')
                 {
-                    div[i] = 1;
-                    count++;
+                    score++;
+                } else if (s[j]=='X')
+                {
+                    score = 0;
                 }
+                sum += score;
             }
-        }      
-        Console.WriteLine(count);
+            p[i] = sum;
+        }
+        for (int i = 0; i < num; i++)
+        {
+            Console.WriteLine(p[i]);
+        }
+
     }
 }
+    
