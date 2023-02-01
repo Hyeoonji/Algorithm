@@ -178,39 +178,94 @@
 //}
 
 // 8958. OX퀴즈
+//public class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        // 케이스의 개수
+//        int num = int.Parse(Console.ReadLine());
+//        // 케이스를 받을 배열
+//        string[] str = new string[num];
+//        // 점수를 받을 배열
+//        int[] arr = new int[num];
+
+//        for (int i = 0; i < str.Length; i++)
+//        {
+//            str[i] = Console.ReadLine();
+
+//            // 케이스 별 점수
+//            int score = 0;
+//            // 연속일 때 추가 점수
+//            int count = 1;
+
+//            // 받은 케이스의 길이만큼
+//            for (int j = 0; j < str[i].Length; j++)
+//            {
+//                // 케이스속 결과 1개씩 확인
+//                if (str[i][j] == 'O')
+//                {
+//                    score += count;
+//                    // 연속될때마다 추가점수를 +1해서 더하기
+//                    count++;
+//                }
+//                if (str[i][j] == 'X')
+//                {
+//                    count = 1;
+//                }
+//            }
+//            arr[i] = score;
+//        }
+//        foreach(int i in arr)
+//        {
+//            Console.WriteLine(i);
+//        }
+//    }
+//}
+    
+//-----------------------
+// foreach 끝까지 알아서 순환하는 반복문
+// foreach(데이터타입 변수명 in 배열,컬렉션등)
+
+// 4344. 평균은 넘겠지
+
 public class Program
 {
     static void Main(string[] args)
     {
-        // 케이스의 개수
-        int num = int.Parse(Console.ReadLine());
-        // 각각의 점수
-        int score=0;
-        // 합
-        int sum =0;
-        int[] p = new int[num];    for (int i = 0; i < num; i++) 
-        {
-            // 개수만큼 문자열 받기
-            string s = Console.ReadLine();
-            for(int j = 0; j < s.Length; j++)
-            {
-                score = 0;
-                if (s[j] == 'O')
-                {
-                    score++;
-                } else if (s[j]=='X')
-                {
-                    score = 0;
-                }
-                sum += score;
-            }
-            p[i] = sum;
-        }
-        for (int i = 0; i < num; i++)
-        {
-            Console.WriteLine(p[i]);
-        }
+        // 첫째줄에는 테스트 케이스의 개수 C
+        int tcase = int.Parse(Console.ReadLine());
 
+        // 테스크 케이스마다 학생의 수 N + N명의 점수
+        for(int i = 0; i < tcase; i++)
+        {
+            string[] str = Console.ReadLine().Split(' ');
+            // 학생의 수 N
+            int n = int.Parse(str[0]);
+            // 첫번째 학생의 수를 제외한 나머지 점수
+            int[] score = new int[n+1];
+            // 평균
+            int [] ave = new int[i];
+            // 평균을 구하기 위한 점수 합
+            int[] sum = new int[i];
+
+            for (int j =0; j<score.Length;j++)
+            {
+                sum[i] += score[j];
+                ave[i] = sum[i] / n;
+                // 인원을 구하기 위한 변수
+                int count = 0;
+
+                if (score[j] >= ave[i])
+                {
+                    count++;
+
+                }
+
+            }
+            
+
+
+        }
+        // 각 케이스마다 평균이 넘는 학생의 비율을 출력 소수 셋째자리까지 반올림
     }
 }
-    
