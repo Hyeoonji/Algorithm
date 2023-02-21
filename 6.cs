@@ -83,7 +83,7 @@ namespace Baekjoon;
 //            string[] str = Console.ReadLine().Split();
 //            // 반복횟수
 //            int r = int.Parse(str[0]);
-            
+
 //            // str의 0은 횟수, 1부터 반복 시작
 //            for(int j =0; j < str[1].Length; j++)
 //            {
@@ -100,63 +100,63 @@ namespace Baekjoon;
 //}
 
 // 1157. 단어 공부
-public class Program
-{
-    static void Main(string[] args)
-    {
-        // 첫째줄에 단어
-        string str = Console.ReadLine();
-        // 문자를 다 대문자로 변환
-        string upper = str.ToUpper();
+//public class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        // 첫째줄에 단어
+//        string str = Console.ReadLine();
+//        // 문자를 다 대문자로 변환
+//        string upper = str.ToUpper();
 
-        // 알파벳의 위치 표시할 나타낼 배열
-        int[] countNum =
-        {
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-        };
-        // 알파벳 배열
-        char[] alphabet =
-        {
-            'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q',
-            'R','S','T','U','V','W','X','Y','Z'
-        };
+//        // 알파벳의 위치 표시할 나타낼 배열
+//        int[] countNum =
+//        {
+//            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+//        };
+//        // 알파벳 배열
+//        char[] alphabet =
+//        {
+//            'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q',
+//            'R','S','T','U','V','W','X','Y','Z'
+//        };
 
-        int count = 0;
-        // 문자의 길이만큼
-        for (int i = 0; i < str.Length; i++)
-        {
-            // A부터 비교
-            for (char j = 'A'; j <= 'Z'; j++)
-            {
-                //같은지 확인
-                if (str[i] == j)
-                {
-                    // 문자가 추가될때마다 값을 추가 
-                    countNum[count]++;
-                }
-                count++;
-            }
-            count = 0;
-        }
+//        int count = 0;
+//        // 문자의 길이만큼
+//        for (int i = 0; i < str.Length; i++)
+//        {
+//            // A부터 비교
+//            for (char j = 'A'; j <= 'Z'; j++)
+//            {
+//                //같은지 확인
+//                if (str[i] == j)
+//                {
+//                    // 문자가 추가될때마다 값을 추가 
+//                    countNum[count]++;
+//                }
+//                count++;
+//            }
+//            count = 0;
+//        }
 
-        // 가장 많은 값을 가진 단어 찾기
-        int Max = 0;
-        char MaxAlpha = 'A';
-        for (int i =0; i < countNum.Length; i++)
-        {
-            if( Max < countNum[i])
-            {
-                Max = countNum[i];
-                MaxAlpha = alphabet[Max];
-            }
-            // 단어가 여러개라면 ? 출력하기 -> 에서 막힘
-            if(Max == countNum[i])
-            {
-                MaxAlpha = '?';
-            }
-        }
+//        // 가장 많은 값을 가진 단어 찾기
+//        int Max = 0;
+//        char MaxAlpha = 'A';
+//        for (int i = 0; i < countNum.Length; i++)
+//        {
+//            if (Max < countNum[i])
+//            {
+//                Max = countNum[i];
+//                MaxAlpha = alphabet[i];
+//            }
+//            // 단어가 여러개라면 ? 출력하기 -> 에서 막힘
+//            if (Max == countNum[i])
+//            {
+//                MaxAlpha = '?';
+//            }
+//        }
 
-        // 가장 많이 사용된 알파벳을 대문자로 출력
-        Console.WriteLine(MaxAlpha);
-    }
-}
+//        // 가장 많이 사용된 알파벳을 대문자로 출력
+//        Console.WriteLine(MaxAlpha);
+//    }
+//}

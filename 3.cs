@@ -1,5 +1,27 @@
 ﻿using System;
+using System.Text;
+
 namespace Baekjoon;
+
+// 25314. 코딩은 체육과목 입니다
+//public class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        // 문제의 정수 N
+//        int N = int.Parse(Console.ReadLine());
+
+//        // 정수 자료형 1개 당 4
+//        int num = N / 4;
+//        // 갯수만큼 long 반복
+//        for (int i = 0; i < num; i++)
+//        {
+//            Console.Write("long ");
+//        }
+//        Console.Write("int");
+
+//    }
+//}
 
 // 2439. 별찍기 2
 //public class Program 
@@ -97,6 +119,6 @@ namespace Baekjoon;
 //            }
 //        }
 //        Console.WriteLine(count);
-        
+
 //    }
 //}

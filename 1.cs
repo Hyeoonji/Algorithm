@@ -1,5 +1,4 @@
-﻿using System;
-namespace Baekjoon;
+﻿namespace Baekjoon;
 
 // 18108. 1998년생인 내가 태국에서는 2541년생?!
 //public class Program
@@ -26,23 +25,27 @@ namespace Baekjoon;
 //        // 둘째 줄에 ((A%C) + (B%C))%C
 //        Console.WriteLine(((A % C) + (B % C)) % C);
 //        // 셋째 줄에 (A×B)%C
-//        Console.WriteLine((A*B) % C);
+//        Console.WriteLine((A * B) % C);
 //        // 넷째 줄에 ((A%C) × (B%C))%C 출력
-//        Console.WriteLine(((A % C) * (B % C)) % C );
+//        Console.WriteLine(((A % C) * (B % C)) % C);
 //    }
 //}
 
-// 2588. 곱셈
-public class Program 
-{
-    static void Main(string[] args)
-    {
-        int A = int.Parse(Console.ReadLine());
-        int B = int.Parse(Console.ReadLine());
+// 2588. 곱셈 
+//public class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        string a = Console.ReadLine();
+//        string b = Console.ReadLine();
 
-    }
-}
+//        Console.WriteLine(int.Parse(a)* (int) Char.GetNumericValue(b[2]));
+//        Console.WriteLine(int.Parse(a)* (int) Char.GetNumericValue(b[1]));
+//        Console.WriteLine(int.Parse(a)* (int) Char.GetNumericValue(b[0]));
+//        Console.WriteLine(int.Parse(a)* int.Parse(b));
 
+//    }
+//}
 
 // 11382. 꼬마 정민
 //public class Program
@@ -84,6 +87,20 @@ public class Program
 //        Console.WriteLine("( 0 )\"\"\"\\");
 //        Console.WriteLine("|\"^\"`    |");
 //        Console.WriteLine("||_/=\\\\__|");
+//    }
+//}
+
+// 25083. 새싹
+//public class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        Console.WriteLine("         ,r'\"7");
+//        Console.WriteLine("r`-_   ,'  ,/");
+//        Console.WriteLine(" \\. \". L_r'");
+//        Console.WriteLine("   `~\\/");
+//        Console.WriteLine("      |");
+//        Console.WriteLine("      |");
 //    }
 //}
 
