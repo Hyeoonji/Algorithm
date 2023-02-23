@@ -1,7 +1,82 @@
 ﻿using System;
 using System.Text;
+using static System.Console;
 
 namespace Baekjoon;
+
+// 2739. 구구단
+//class Project
+//{
+//    static void Main(string[] args)
+//    {
+//        int a = int.Parse(Console.ReadLine());
+//        for (int i = 1; i < 10; i++)
+//        {
+//            Console.WriteLine(a + " * " + i + " = " + a * i);
+//        }
+//    }
+//}
+
+// 10950. A+B - 3
+//public class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        int times = int.Parse(ReadLine());
+
+//        for (int i = 0; i < times; i++)
+//        {
+//            string[] input = ReadLine().Split();
+//            int num1 = int.Parse(input[0]);
+//            int num2 = int.Parse(input[1]);
+//            WriteLine(num1 + num2);
+//        }
+//    }
+//}
+
+// 8393. 합
+//public class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        int score = int.Parse(ReadLine());
+
+//        int sum = 0;
+
+//        for (int i = 1; i <= score; i++)
+//        {
+//            sum = sum + i;
+//        }
+//        WriteLine(sum);
+
+//    }
+//}
+
+// 25304. 영수증
+//public class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        int total = int.Parse(ReadLine());
+//        int num = int.Parse(ReadLine());
+//        int sum = 0;
+//        for (int i = 0; i < num; i++)
+//        {
+//            string[] input = ReadLine().Split();
+//            int num1 = int.Parse(input[0]);
+//            int num2 = int.Parse(input[1]);
+//            sum += num1 * num2;
+//        }
+//        if (total == sum)
+//        {
+//            WriteLine("Yes");
+//        }
+//        else
+//        {
+//            WriteLine("No");
+//        }
+//    }
+//}
 
 // 25314. 코딩은 체육과목 입니다
 //public class Program
@@ -20,6 +95,60 @@ namespace Baekjoon;
 //        }
 //        Console.Write("int");
 
+//    }
+//}
+
+// 15552. 빠른 A+B
+
+// 11021. A+B - 7
+//public class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        int times = int.Parse(ReadLine());
+
+//        for (int i = 0; i < times; i++)
+//        {
+//            string[] input = ReadLine().Split();
+//            int num1 = int.Parse(input[0]);
+//            int num2 = int.Parse(input[1]);
+//            WriteLine("Case #{0}: {1}", i + 1, num1 + num2);
+//        }
+//    }
+//}
+
+// 11022. A+B - 8
+//public class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        int times = int.Parse(ReadLine());
+
+//        for (int i = 0; i < times; i++)
+//        {
+//            string[] input = ReadLine().Split();
+//            int num1 = int.Parse(input[0]);
+//            int num2 = int.Parse(input[1]);
+//            WriteLine("Case #{0}: {1} + {2} = {3}", i + 1, num1, num2, num1 + num2);
+//        }
+//    }
+//}
+
+// 2435. 별찍기 1
+//public class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        int times = int.Parse(ReadLine());
+
+//        for (int i = 0; i < times; i++)
+//        {
+//            for (int j = 0; j <= i; j++)
+//            {
+//                Write("*");
+//            }
+//            WriteLine();
+//        }
 //    }
 //}
 

@@ -110,6 +110,19 @@
 
 //}
 
+// 10810. 공 넣기
+public class Program
+{
+    static void Main(string[] args)
+    {
+        // 첫째줄에 바구니 개수 N 진행횟수 M
+
+        // 둘째줄부터 ( 시작바구니i 끝바구니j 넣을공의번호k ) 를 M만큼 반복
+    }
+}
+
+
+
 // 5597. 과제 안 내신 분,,?
 //public class Program
 //{

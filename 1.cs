@@ -1,5 +1,94 @@
 ﻿namespace Baekjoon;
 
+// 2557. Hello World
+//class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        Console.WriteLine("Hello World!");
+//    }
+//}
+
+// 1000. A+B
+//class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        string[] in_str = Console.ReadLine().Split();
+//        Console.WriteLine(int.Parse(in_str[0]) + int.Parse(in_str[1]));
+//    }
+//}
+
+// 1001. A-B
+//class Program
+//{
+//    static void Main()
+//    {
+//        string s = Console.ReadLine();
+//        string[] ss = s.Split();
+//        int a = int.Parse(ss[0]);
+//        int b = int.Parse(ss[1]);
+
+//        Console.WriteLine(a - b);
+//    }
+//}
+// 10998. A×B
+//class Program
+//{
+//    static void Main()
+//    {
+//        string s = Console.ReadLine();
+//        string[] ss = s.Split();
+
+//        int a = int.Parse(ss[0]);
+//        int b = int.Parse(ss[1]);
+
+//        Console.WriteLine(a * b);
+//    }
+//}
+
+// 1008. A/B
+//class Program
+//{
+//    static void Main()
+//    {
+//        string s = Console.ReadLine();
+//        string[] ss = s.Split();
+//        double a = double.Parse(ss[0]);
+//        double b = double.Parse(ss[1]);
+
+//        Console.WriteLine(a / b);
+//    }
+//}
+
+// 10869. 사칙연산
+//class Program
+//{
+//    static void Main()
+//    {
+//        string s = Console.ReadLine();
+//        string[] ss = s.Split();
+//        int a = int.Parse(ss[0]);
+//        int b = int.Parse(ss[1]);
+
+//        Console.WriteLine(a + b);
+//        Console.WriteLine(a - b);
+//        Console.WriteLine(a * b);
+//        Console.WriteLine(a / b);
+//        Console.WriteLine(a % b);
+//    }
+//}
+
+// 10926. ??!
+//class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        string s = Console.ReadLine();
+//        Console.WriteLine(s + "??!");
+//    }
+//}
+
 // 18108. 1998년생인 내가 태국에서는 2541년생?!
 //public class Program
 //{
@@ -104,4 +193,6 @@
 //    }
 //}
 
+// 3003. 킹, 퀸, 룩, 비숍, 나이트, 폰
+// 아직 안풀음~~~!!!!!!!
 
