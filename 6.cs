@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace Baekjoon;
+﻿namespace Baekjoon;
 
 // 11654. 아스키코드
 //public class Program
@@ -99,7 +97,7 @@ namespace Baekjoon;
 //    }
 //}
 
-// 1157. 단어 공부
+// 1157. 단어 공부 -----------------------------------------
 //public class Program
 //{
 //    static void Main(string[] args)
@@ -141,22 +139,151 @@ namespace Baekjoon;
 
 //        // 가장 많은 값을 가진 단어 찾기
 //        int Max = 0;
-//        char MaxAlpha = 'A';
 //        for (int i = 0; i < countNum.Length; i++)
 //        {
 //            if (Max < countNum[i])
 //            {
 //                Max = countNum[i];
-//                MaxAlpha = alphabet[i];
-//            }
-//            // 단어가 여러개라면 ? 출력하기 -> 에서 막힘
-//            if (Max == countNum[i])
-//            {
-//                MaxAlpha = '?';
 //            }
 //        }
 
-//        // 가장 많이 사용된 알파벳을 대문자로 출력
-//        Console.WriteLine(MaxAlpha);
+//        // 많이 사용된 알파벳이 여러개인지 확인
+//        bool isSame = false;
+//        for (int i = 0; i < countNum.Length; i++)
+//        {
+//            for (int j = 0; j < countNum.Length; j++)
+//            {
+//                if (countNum[i] == Max && countNum[i] == countNum[j] && i != j)
+//                {
+//                    isSame = true;
+
+//                }
+//            }
+//        }
+
+//        int index = Array.IndexOf(countNum, Max);
+//        if (upper != null)
+//        {
+//            if (isSame)
+//            {
+//                Console.WriteLine("?");
+//            }
+//            else
+//            {
+//                // 가장 많이 사용된 알파벳을 대문자로 출력
+//                Console.WriteLine(alphabet[index]);
+//            }
+//        }
+
 //    }
 //}
+
+// 1157. 단어 공부 --  재호.ver
+//public class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        // 알파벳의 위치 표시할 나타낼 배열
+//        int[] countNum =
+//        {
+//            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+//        };
+//        // 알파벳 배열
+//        char[] alphabet =
+//        {
+//            'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q',
+//            'R','S','T','U','V','W','X','Y','Z'
+//        };
+
+//        // CountNum의 위치를 나타낼 카운트
+//        int count = 0;
+
+//        // 입력값을 대문자로 변환해준다.
+//        string input = Console.ReadLine().ToUpper();
+
+//        // 입력값 길이만큼 반복
+//        for (int j = 0; j < input.Length; j++)
+//        {
+//            // a ~ z 까지 비교
+//            for (char i = 'A'; i <= 'Z'; i++)
+//            {
+//                // 만약 입력값[j]번째의 값이 i번째와 같을 경우
+//                if (input[j] == i)
+//                {
+//                    // countNum의 count위치의 크기를 1증가
+//                    countNum[count]++;
+//                }
+//                // 위치를 증가
+//                count++;
+//            }
+//            count = 0;
+//        }
+
+//        // 가장 많이 나온 값 구하기
+//        int MaxCount = 0;
+//        foreach (var num in countNum)
+//        {
+//            if (num != 0)
+//            {
+//                if (MaxCount < num)
+//                {
+//                    MaxCount = num;
+//                }
+//            }
+//        }
+
+//        // 중복되었는지 체크할 로직
+//        bool isOverlap = false;
+//        for (int i = 0; i < countNum.Length; i++)
+//        {
+//            for (int j = 0; j < countNum.Length; j++)
+//            {
+//                // countNum의 값과 MaxCount값이 같고 
+//                // countNum의 값중에 중복돼 있고
+//                // cnumtNum의 기준값이 자기 자신이 아닐때
+//                if (countNum[i] == MaxCount && countNum[i] == countNum[j] && i != j)
+//                {
+//                    // 그 값은 중복되 있다.
+//                    isOverlap = true;
+//                }
+//            }
+//        }
+
+//        int index = Array.IndexOf(countNum, MaxCount);
+//        if (input != null)
+//        {
+//            if (isOverlap) // 중복 있을 경우
+//                Console.WriteLine('?');
+//            else // 안되있을 경우
+//                Console.WriteLine(alphabet[index]);
+//        }
+
+//    }
+//}
+
+// 1152. 단어의 개수
+//public class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        // 영어 대소문자와 공백으로 이루어진 문자열
+//        // 앞 뒤 공백 제거
+//        string str = Console.ReadLine().Trim();
+//        string[] arr = str.Split();
+
+//        int count = 0;
+//        // 만약 사이에 공백이 있다면, count +1
+//        for(int i =0; i<arr.Length; i++)
+//        {
+//            if (string.IsNullOrEmpty(arr[i]))
+//            {
+//                count++;
+//            }
+//        }
+
+//        Console.WriteLine(arr.Length - count);
+//    }
+//}
+// string.IsNullOrEmpty : 공백이거나 널인지 확인
+
+// 
