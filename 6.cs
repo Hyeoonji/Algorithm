@@ -382,16 +382,33 @@
 //    }
 //}
 
- //11718. 그대로 출력하기
+//11718. 그대로 출력하기
+//public class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        List<string> list = new List<string>();
+//        for (int i = 0; i < 100; i++)
+//        {
+//            list.Add(Console.ReadLine());
+//        }
+//        for (int i = 0; i < 100; i++)
+//        {
+//            Console.WriteLine(list[i]);
+//        }
+
+//    }
+//}
+
+// 2444. 별찍기 - 7
 public class Program
 {
     static void Main(string[] args)
     {
-        // 입력 최대 100줄
-        List<string> list = new List<string>();
-        for(int i =0; i<100; i++)
-        {
-            list.Add(Console.ReadLine());
-        }
+        // 첫째줄에 개수 N
+        int n = int.Parse(Console.ReadLine());
+
+
+
     }
 }
