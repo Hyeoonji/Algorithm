@@ -401,14 +401,43 @@
 //}
 
 // 2444. 별찍기 - 7
-public class Program
-{
-    static void Main(string[] args)
-    {
-        // 첫째줄에 개수 N
-        int n = int.Parse(Console.ReadLine());
+//public class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        // 첫째줄에 개수 N
+//        int n = int.Parse(Console.ReadLine());
+//        // n까지는 증가
+//        for (int i = 0; i < n; i++)
+//        {
+//            // n-1까지는 " "
+//            for (int j = n-i-1; j > 0; j--)
+//            {
+//                Console.Write(" ");
 
+//            }
+//            // n은 *
+//            for (int k = 0; k < i*2+1; k++)
+//            {
+//                Console.Write("*");
+//            }
+//            Console.WriteLine();
+//        }
 
+//        // 2*n-1까지는 감소
+//        for (int i = n-1; i > 0; i--)
+//        {
+//            for (int j = 0; j < n-i; j++)
+//            {
+//                Console.Write(" ");
+//            }
+//            for (int k = i*2-1; k > 0; k--)
+//            {
+//                Console.Write("*");
+//            }
+//            Console.WriteLine();
+//        }
+//    }
+//}
 
-    }
-}
+// 10812. 바구니 순서 바꾸기

@@ -170,7 +170,6 @@ namespace Baekjoon;
 //            }
 //            WriteLine();
 //        }
-//        Read();
 //    }
 //}
 
