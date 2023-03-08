@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Shin\\KD11\\BaekJoon\\Baekjoon.csproj": {}
+    "D:\\Shin\\KD11\\Baekjoon\\Baekjoon.csproj": {}
   },
   "projects": {
-    "D:\\Shin\\KD11\\BaekJoon\\Baekjoon.csproj": {
+    "D:\\Shin\\KD11\\Baekjoon\\Baekjoon.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Shin\\KD11\\BaekJoon\\Baekjoon.csproj",
+        "projectUniqueName": "D:\\Shin\\KD11\\Baekjoon\\Baekjoon.csproj",
         "projectName": "Baekjoon",
-        "projectPath": "D:\\Shin\\KD11\\BaekJoon\\Baekjoon.csproj",
+        "projectPath": "D:\\Shin\\KD11\\Baekjoon\\Baekjoon.csproj",
         "packagesPath": "C:\\Users\\medici\\.nuget\\packages\\",
         "outputPath": "D:\\Shin\\KD11\\Baekjoon\\obj\\",
         "projectStyle": "PackageReference",

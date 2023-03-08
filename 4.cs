@@ -149,7 +149,7 @@ namespace Baekjoon;
 //    }
 //}
 
-// 10813. 공 바꾸기 ----------------------------------------------------------------
+// 10813. 공 바꾸기
 //public class Program
 //{
 //    static void Main(string[] args)
@@ -232,6 +232,52 @@ namespace Baekjoon;
 //}
 //-----------------------------
 // Distinct(): 중복 값을 제거
+
+// 10811. 바구니 뒤집기 -------------------------------------------------------
+//public class Program
+//{
+//    static void Main(string[] args) // 예제 입력하면서 해보는 중
+//    {
+//        // 첫째줄에 바구니 개수 N 진행횟수 M
+//        string[] str = Console.ReadLine().Split(); // 5 4
+//        int N = int.Parse(str[0]); // 5
+//        int M = int.Parse(str[1]); // 4
+
+//        // 공의 번호를 받을 배열
+//        int[] count = new int[N];
+//        int[] change = new int[N];
+
+//        // 1부터 넣어주기
+//        for (int i = 0; i < N; i++)
+//        {
+//            count[i] = i + 1;
+//            change[i] = i + 1;
+//        }
+
+//        // M만큼 반복
+//        // 시작 바구니i 끝바구니j
+//        for(int i = 0; i < M; i++) 
+//        {
+//            string[] num = Console.ReadLine().Split(); // 1 2
+//            int bucketi = int.Parse(num[0]); // 1
+//            int bucketj = int.Parse(num[1]); // 2
+//            for(int j = bucketj-1; j < bucketi-1; j--) // [1]부터 [0]까지
+//            {
+//                for(int k = bucketi - 1; k < bucketj - 1; k++) // [0]부터 [1]까지
+//                {
+//                    count[j] = change[k];
+//                }
+//            }
+
+//        }
+
+//        foreach (int number in count)
+//        {
+//            Console.Write(number + " ");
+//        }
+
+//    }
+//}
 
 // 1546. 평균
 //public class Program
