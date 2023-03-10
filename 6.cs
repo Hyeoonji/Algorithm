@@ -366,29 +366,55 @@
 // 10812. 바구니 순서 바꾸기
 public class Program
 {
+    // 예시 입력하며 진행중
     static void Main(string[] args)
     {
         //첫째줄에 바구니 개수 N 진행횟수 M
-        string[] str = Console.ReadLine().Split();
-        int N = int.Parse(str[0]);
-        int M = int.Parse(str[1]);
+        string[] str = Console.ReadLine().Split(); // 10 5
+        int N = int.Parse(str[0]); // 10
+        int M = int.Parse(str[1]); // 5
 
         // 공의 번호를 받을 배열
-        int[] count = new int[N];
+        int[] count = new int[N]; 
 
         // 1부터 넣어주기
         for (int i = 0; i < N; i++)
         {
-            count[i] = i + 1;
+            count[i] = i + 1; // 1 2 3 4 5 6 7 8 9 10
         }
 
         // M만큼 반복
         for (int i = 0; i < M; i++)
         {
-            string[] num = Console.ReadLine().Split();
-            int bucketi = int.Parse(num[0]);
-            int bucketj = int.Parse(num[1]);
-            int bucketk = int.Parse(num[1]);
+            string[] num = Console.ReadLine().Split(); // 1 6 4
+            int bucketi = int.Parse(num[0]); // 1
+            int bucketj = int.Parse(num[1]); // 6
+            int bucketk = int.Parse(num[2]); // 4
+            int[] begin = new int[bucketk - bucketi]; // 4-1 3개
+            int[] mid = new int[bucketj - bucketk+1]; ; // 6-4 (+1) 본인을 포함한 3개
+
+            // begin [0] - [2]
+            for (int j = 0; j < bucketk-2; j++) 
+            {
+                begin[j] = count[j];
+            }
+
+            // mid [3]-[5]
+            for(int k = bucketk-1; k < bucketj-1; k++) 
+            {
+                for(int j = 0;k < bucketj - bucketk + 1; j++)
+                {
+                    mid[j] += count[k];
+                }
+            }
+            count = begin.Concat(mid).ToArray();
+        }
+
+        foreach (int number in count)
+        {
+            Console.Write(number + " ");
         }
     }
 }
+
+
