@@ -363,58 +363,128 @@
 //    }
 //}
 
-// 10812. 바구니 순서 바꾸기
-public class Program
-{
-    // 예시 입력하며 진행중
-    static void Main(string[] args)
-    {
-        //첫째줄에 바구니 개수 N 진행횟수 M
-        string[] str = Console.ReadLine().Split(); // 10 5
-        int N = int.Parse(str[0]); // 10
-        int M = int.Parse(str[1]); // 5
+// 10812. 바구니 순서 바꾸기 ----------------------------------- 오류 중단
 
-        // 공의 번호를 받을 배열
-        int[] count = new int[N]; 
+//public class Program
+//{
+//    // 예시 입력하며 진행중
+//    static void Main(string[] args)
+//    {
+//        //첫째줄에 바구니 개수 N 진행횟수 M
+//        string[] str = Console.ReadLine().Split(); // 10 5
+//        int N = int.Parse(str[0]); // 10
+//        int M = int.Parse(str[1]); // 5
 
-        // 1부터 넣어주기
-        for (int i = 0; i < N; i++)
-        {
-            count[i] = i + 1; // 1 2 3 4 5 6 7 8 9 10
-        }
+//        // 공의 번호를 받을 배열
+//        int[] count = new int[N]; // 10
+//        int[] result = new int[N]; // 10
 
-        // M만큼 반복
-        for (int i = 0; i < M; i++)
-        {
-            string[] num = Console.ReadLine().Split(); // 1 6 4
-            int bucketi = int.Parse(num[0]); // 1
-            int bucketj = int.Parse(num[1]); // 6
-            int bucketk = int.Parse(num[2]); // 4
-            int[] begin = new int[bucketk - bucketi]; // 4-1 3개
-            int[] mid = new int[bucketj - bucketk+1]; ; // 6-4 (+1) 본인을 포함한 3개
+//        // 1부터 넣어주기
+//        for (int i = 0; i < N; i++)
+//        {
+//            count[i] = i + 1; // 1 2 3 4 5 6 7 8 9 10
+//            result[i] = i + 1; // 1 2 3 4 5 6 7 8 9 10
 
-            // begin [0] - [2]
-            for (int j = 0; j < bucketk-2; j++) 
-            {
-                begin[j] = count[j];
-            }
+//        }
 
-            // mid [3]-[5]
-            for(int k = bucketk-1; k < bucketj-1; k++) 
-            {
-                for(int j = 0;k < bucketj - bucketk + 1; j++)
-                {
-                    mid[j] += count[k];
-                }
-            }
-            count = begin.Concat(mid).ToArray();
-        }
+//        // M만큼 반복
+//        for (int i = 0; i < M; i++)
+//        {
+//            string[] num = Console.ReadLine().Split(); // 1 6 4
+//            int bucketi = int.Parse(num[0]) - 1; // 1 [0]
+//            int bucketj = int.Parse(num[1]) - 1; // 6 [5]
+//            int bucketk = int.Parse(num[2]) - 1; // 4 [3]
+//            int[] begin = new int[bucketk - bucketi]; // 4-1 3개 123
+//            int[] mid = new int[bucketj - bucketk + 1]; ; // 6-4 (+1) 본인을 포함한 3개 456
 
-        foreach (int number in count)
-        {
-            Console.Write(number + " ");
-        }
-    }
-}
+//            // count [0] - [2] -> begin[0] - [2]
+//            for (int j = bucketi; j < bucketk; j++)
+//            {
+//                begin[j] = count[j];
+
+//            }
+
+//            // count [3]-[5] -> mid [0] - [2]
+//            for (int k = bucketk; k <= bucketj; k++)
+//            {
+//                for (int j = 0; j < bucketj - bucketk + 1; j++)
+//                {
+//                    mid[j] = count[k];
+//                }
+//            }
+
+//            // 배열에 그대로 다시 넣어줌
+//            // [0] - [2]
+//            for (int l = bucketi; l < bucketk; l++)
+//            {
+//                result[l] = mid[l];
+//            }
+//            // [3] - [5]
+//            for (int n = 0; n < bucketj - bucketk + 1; n++)
+//            {
+//                for (int m = bucketk; m <= bucketj; m++)
+//                {
+//                    result[m] = begin[n];
+//                }
+//            }
+//        }
+
+//        Console.WriteLine(string.Join(", ", result));
+//    }
+//}
 
 
+// 10988. 팰린드롬인지 확인하기
+//public class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        // 팰린드롬: 앞으로 읽어도 뒤로 읽어도 똑같은 단어
+//        // 첫째줄에 단어 주어짐
+//        string word = Console.ReadLine();
+//        string[] words = word.Split();
+//        int leng = word.Length;
+//        Console.WriteLine(leng);
+
+//        // 펠린드롬인지 확인
+//        bool isPel = true;
+
+//        // 단어가 홀수/짝수로 이루어졌는지 확인
+//        if (leng % 2 == 0)
+//        {
+//            int count = leng / 2;
+//            // 짝수라면 반 갈라서 확인
+//            for (int i = 0; i < count; i++)
+//            {
+//                if (word[i] != word[leng -i] && isPel)
+//                {
+//                    isPel = false;
+//                    return;
+//                }
+//            }
+//        }
+//        else if (leng % 2 != 0)
+//        {
+//            // 홀수라면 가운데를 제외하고 확인
+//            int count = leng / 2; // 5라면 5/2 = 2
+//            // 짝수라면 반 갈라서 확인
+//            for (int i = 0; i < count; i++) // [0][1] [2] [3][4]
+//            {
+//                if (word[i] != word[leng - i] && isPel)
+//                {
+//                    isPel = false;
+//                    return;
+//                }
+//            }
+//        }
+
+//        if (isPel)
+//        {
+//            Console.WriteLine(1);
+//        }
+//        else
+//        {
+//            Console.WriteLine(0);
+//        }
+//    }
+//}
