@@ -97,7 +97,7 @@
 //            num[i] = int.Parse(str[i]);
 //        }
 
-       
+
 //        for(int j =0; j < num.Length; j++)
 //        {
 //            if (num[j] > max)
@@ -115,4 +115,58 @@
 //    }
 //}
 
-//
+// 행렬의 곱셈
+//using System;
+
+//public class Solution
+//{
+//    public int[,] solution(int[,] arr1, int[,] arr2)
+//    {
+//        // 행(0), 열(1)
+//        int[,] answer = new int[arr1.GetLength(0),arr2.GetLength(1)] ;
+
+//        // 밑으로 증가 a -> c
+//        for(int i = 0; i < arr1.GetLength(0); i++)
+//        {
+//            // 앞 행렬 증가 a -> b
+//            for(int j = 0; j <arr1.GetLength(1); j++)
+//            {
+//                //뒤 행렬 증가 x1 -> y1
+//                for(int k = 0; k < arr2.GetLength(1); k++)
+//                {
+//                    answer[i,k] += arr1[i,j] * arr2[j,k];
+//                }
+//            }
+//        }
+//        return answer;
+//    }
+//}
+
+/* 행렬의 곱셈 -> 덧셈으로 변환하기
+    - 곱셈
+(a, b) + (x1, y1)  --> (a x1 + b x2 , a y1 + b y2)
+(c, d) + (x2, y2)  --> (c x1 + d x2 , c y1 + d y2)
+-> 이대로 풀 경우, a -> b 옆으로 증가, x1 -> x2 밑으로 증가 =>> 꼬이게 됨
+    -> 덧셈으로 변환해서 풀이 ([a,b] + [x,y] = [a+x, b+y]를 활용)
+(a x1 + b x2 , a y1 + b y2) 를 [a x1, ay1] + [b x1, b y2] 로 변경 가능 
+-> 이렇게 되면 둘다 옆으로 증가
+ */
+
+// 콜라츠 추측
+public class Solution
+{
+    public int solution(int num)
+    {
+        int answer = 0;
+
+
+
+
+
+
+
+
+        return answer;
+    }
+}
+
