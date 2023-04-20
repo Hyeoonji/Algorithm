@@ -158,12 +158,12 @@
 //    public int solution(int n)
 //    {
 //        int answer = 0;
-//        int[] pibo = new int[n + 1];
-//        pibo[0] = 0;
-//        pibo[1] = 1;
+//        int[] fibo = new int[n + 1];
+//        fibo[0] = 0;
+//        fibo[1] = 1;
 //        for (int i = 2; i < n + 1; i++)
 //        {
-//            pibo[i] = (pibo[i - 2] + pibo[i - 1]) % 1234567;
+//            fibo[i] = (fibo[i - 2] + fibo[i - 1]) % 1234567;
 //            // 왜 안에서 나눠야 하는가? -> 밖에서 나눌 경우, 숫자가 크면 int, long으로도 커버가 되지 않기 떄문
 //        }
 //        // [2] = 0 + 1 = 1
@@ -172,9 +172,49 @@
 //        // [5] = 2 + 3 = 5
 //        // [6] = 3 + 5 = 8
 
-//        answer = pibo[n];
+//        answer = fibo[n];
 //        return answer;
 //    }
 //}
 
+// 예상 대진표
+//using System;
+
+//class Solution
+//{
+//    public int solution(int n, int a, int b)
+//    {
+//        int answer = 1;
+
+//        // a와 b가 만날때까지 진행, 단, a,b 중 뭐가 더 큰지는 알 수 없음
+//        // -> 짝수일때는 a의 앞, 홀수일때는 뒤에 b가 있다면 경기한다는 것
+//        while (!((a%2 ==0 && a-1 == b) || (a%2 == 1 && a+1 == b))) 
+//        {
+            
+//            if (a % 2 == 0) // a가 짝수면 -> 4/2 = 2 번째 경기
+//            {
+//                a = a / 2;
+//            }
+//            else // a가 홀수면 -> (3+1)/2 = 2 번째 경기 / (7+1)/2 = 4번째 경기
+//            {
+//                a = (a+1) / 2;
+//            }
+//            // b도 동일
+//            if (b % 2 == 0)
+//            {
+//                b = b / 2;
+//            }
+//            else
+//            {
+//                b = (b+1) / 2;
+//            }
+//            answer++;
+//        }
+//        return answer;
+//    }
+//}
+
+
 //
+
+
