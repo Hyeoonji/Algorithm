@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Shin\\2023_2\\AlgorithmStudy\\Algorithm\\Baekjoon.csproj": {}
+    "C:\\Shin\\2023_2\\AlgorithmStudy\\Algorithm\\Algotirhm.csproj": {}
   },
   "projects": {
-    "C:\\Shin\\2023_2\\AlgorithmStudy\\Algorithm\\Baekjoon.csproj": {
+    "C:\\Shin\\2023_2\\AlgorithmStudy\\Algorithm\\Algotirhm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Shin\\2023_2\\AlgorithmStudy\\Algorithm\\Baekjoon.csproj",
-        "projectName": "Baekjoon",
-        "projectPath": "C:\\Shin\\2023_2\\AlgorithmStudy\\Algorithm\\Baekjoon.csproj",
+        "projectUniqueName": "C:\\Shin\\2023_2\\AlgorithmStudy\\Algorithm\\Algotirhm.csproj",
+        "projectName": "Algotirhm",
+        "projectPath": "C:\\Shin\\2023_2\\AlgorithmStudy\\Algorithm\\Algotirhm.csproj",
         "packagesPath": "C:\\Users\\jane4\\.nuget\\packages\\",
         "outputPath": "C:\\Shin\\2023_2\\AlgorithmStudy\\Algorithm\\obj\\",
         "projectStyle": "PackageReference",
