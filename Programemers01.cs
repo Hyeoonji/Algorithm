@@ -1,7 +1,5 @@
 ﻿using System;
 
-namespace Programmers;
-
 /*// 정수 제곱근 판별
 public class Solution
 {
@@ -58,4 +56,24 @@ public class Solution
     }
 }*/
 
-
+/*// 정수 내림차순 배치하기 ------------------------------------------
+public class Solution
+{
+    public long solution(long n)
+    {
+        long answer = 0;
+        int length = (int)Math.Floor(Math.Log10(n)+1);
+        long[] num = new long[length];
+        for(int i = length-1; i <= 0; i--)
+        {
+            num[i] = n/(long)(Math.Pow(10,i));
+        }
+        Array.Sort(num);
+        Array.Reverse(num);
+        for(int i = 0; i < num.Length; i++)
+        {
+            num = /
+        }
+        return answer;
+    }
+}*/
