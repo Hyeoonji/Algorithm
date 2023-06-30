@@ -410,4 +410,33 @@ public class Solution
     }
 }*/
 
-//
+// 점프와 순간이동
+// 0->n이 아니라 n -> 0 으로 생각할 것
+// n을 2로 나눠서 갈 수 있는가? 갈수있다면 순간이동한 것.
+// 아니라면 1칸을 이동한 것 => 에너지 소모
+class Solution
+{
+    public int solution(int n)
+    {
+        int answer = 0;
+        int k = 0;
+        while(true)
+        {
+            if(n == 0)
+            {
+                break;
+            }
+            if(n%2 != 0)
+            {
+                n--;
+                k++;
+            }
+            else
+            {
+                n = n / 2;
+            }
+        }
+        answer = k;
+        return answer;
+    }
+}
