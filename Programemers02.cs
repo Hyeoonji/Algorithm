@@ -315,7 +315,7 @@ public class Solution
     }
 }*/
 
-// 영어 끝말잇기
+/*// 영어 끝말잇기
 class Solution
 {
     public int[] solution(int n, string[] words)
@@ -369,6 +369,45 @@ class Solution
         
         return answer;
     }
-}
+}*/
 
+/*// 카펫
+public class Solution
+{
+    public int[] solution(int brown, int yellow)
+    {
+        int[] answer = new int[2];
+        int row = 0;
+        int col = 0;
 
+        // 둘레(2w + 2h -4)와 면적(w*h)의 공식을 통해 가로세로의 합을 구함
+        int sum = (brown + 4) / 2;                  //가로와 세로의 합 
+        int tile = brown + yellow;                  //면적 
+
+        List<int> div_list = new List<int>();
+
+        for (int i = 1; i <= tile; i++)             //약수를 리스트에 담음
+        {
+            if (tile % i == 0)
+            {
+                div_list.Add(i);
+            }
+        }
+        
+        foreach(int a in div_list)                  //약수에 대해   
+        {
+            int b = tile / a;                       
+            if(a + b == sum) 
+            {
+                row = a;
+                col = b;
+            }
+        }
+
+        answer[0] = row;
+        answer[1] = col;
+        return answer;
+    }
+}*/
+
+//
