@@ -441,7 +441,7 @@ class Solution
     }
 }*/
 
-// N개의 최소공배수
+/*// N개의 최소공배수
 // 유클리드 호제법: 2개의 자연수 a, b(a > b)에 대해서 a를 b로 나눈 나머지가 r일 때, a와 b의 최대공약수는 b와 r의 최대공약수와 같다.
 // 1. GCD: 나누어 떨어질 때까지 나누어서 최대공약수를 구하기
 // 2. LCM: a와 b의 최소공배수는 a와 b의 곱을 a와 b의 최대공약수를 나눈 것과 같다
@@ -473,6 +473,33 @@ public class Solution
         {
             answer = LCM(answer, arr[i]);
         }
+        return answer;
+    }
+}*/
+
+// 멀리 뛰기
+public class Solution
+{
+    //피보나치 수열 활용
+    long fibo = 1;
+    long num = 1;
+    public long solution(int n)
+    {
+        long answer = 0;
+        if(n == 0 || n == 1)
+        {
+            answer = 1;
+        }
+        else
+        {
+            for(int i = 2; i <= n; i++)
+            {
+                answer = (fibo + num) % 1234567;
+                fibo = num;
+                num = answer;
+            }
+        }
+
         return answer;
     }
 }
