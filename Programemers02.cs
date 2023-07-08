@@ -477,7 +477,7 @@ public class Solution
     }
 }*/
 
-// 멀리 뛰기
+/*// 멀리 뛰기
 public class Solution
 {
     //피보나치 수열 활용
@@ -502,4 +502,53 @@ public class Solution
 
         return answer;
     }
-}
+}*/
+
+/*// 귤 고르기
+public class Solution
+{
+    public int solution(int k, int[] tangerine)
+    {
+        int answer = 0;
+        Array.Sort(tangerine);                      //오름차순 정렬
+        List<int> count = new List<int>();
+        int compare = tangerine[0];                 
+        int num = 1;
+
+        for (int i = 1; i < tangerine.Length; i++)
+        {
+            if (compare != tangerine[i])            // 1==2 ? 
+            {
+                count.Add(num);                     //{1,2,2,1,2}
+                compare = tangerine[i];
+                num = 1;
+            } else            
+            {
+                num++;
+            }
+        }
+
+        count.Add(num);                             //마지막 숫자를 답아야 함
+        count.Sort();                               //오름차순
+        count.Reverse();                            //내림차순
+
+        foreach (int i in count)
+        {
+            if (k < i)
+            {
+                answer++;
+                break;
+            }
+            else if (k >= i)
+            {
+                k -= i;
+                answer++;
+                if (k <= 0) break;
+            }
+        }
+
+        return answer;
+    }
+}*/
+
+//
