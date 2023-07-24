@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Programmers;
 
@@ -551,4 +552,155 @@ public class Solution
     }
 }*/
 
-//
+/* // 괄호 회전하기 --------------------------------------------------------------------
+public class Solution
+{
+
+    //올바른 괄호 공식 활용
+    public bool Bracket(string str, char cha)
+    {
+        bool correct = false;
+        char[] chars = str.ToCharArray();
+        int countFront = 0;
+        int countBack = 0;
+
+        for (int i = 0; i < chars.Length; i++)
+        {
+            if (chars[0] == ')')
+            {
+                correct = false;
+                return correct;
+            }
+            else if (chars[chars.Length - 1] == cha)
+            {
+                correct = false;
+                return correct;
+            }
+            else
+            {
+                if (chars[i] == cha) countFront++;
+                else countBack++;
+
+                if (countFront < countBack)
+                {
+                    correct = false;
+                    return correct;
+                }
+
+            }
+        }
+
+        if (countFront != countBack)
+        {
+            correct = false;
+        }
+
+        return correct;
+
+    }
+    public int solution(string s)
+    {
+        int answer = -1;
+        for(int i = 0; i < s.Length; i++)
+        {
+            
+        }
+
+        return answer;
+    }
+}*/
+
+/*// 연속 부분 수열 합의 개수
+public class Solution
+{
+
+    public int Partial(int[] ele, int start, int len)  //부분합을 구하는 식
+    {
+        int sum = 0;
+        for (int i = start; i < start + len; i++)
+        {
+            sum += ele[i];
+        }
+        return sum;
+    }
+
+    // 연속값을 어떻게 처리할 것인가
+    // -> 길이가 작아진다면 앞에서 추가할 수 있도록 해야 함
+    // ->> 그러면 길이에 따라 더하는 방식으로 가야 할 듯
+
+    public int solution(int[] elements)
+    {
+        int answer = 0;
+        int[] ele = new int[elements.Length * 2];
+        //List<int> result = new List<int>();
+        HashSet<int> numset = new HashSet<int>();
+
+        for (int i = 0; i < elements.Length; i++)            //길이가 2배인 배열 준비
+        {
+            ele[i] = elements[i];
+            ele[i + elements.Length] = elements[i];
+        }
+
+        int count = elements.Length;
+
+        for (int i = 0; i < elements.Length; i++)
+        {
+            if (count == 0)
+            {
+                break;
+            }
+            for (int j = 0; j < elements.Length; j++)
+            {
+                //기존의 코드
+                //result.Add(Partial(ele, j, count));
+                //result = result.Distinct().ToList();      //계속 중복을 확인하는 과정에서 시간 초과
+                numset.Add(Partial(ele, j, count));
+
+            }
+            count--;
+        }
+
+        answer = numset.Count;
+
+        return answer;
+    }
+}
+//-------------------------------------
+// HashSet: 중복되지 않은 값들이 존재하는 데이터 집합
+// 이를 이용해 중복값을 확인하는 시간 단축
+*/
+
+/*// H-Index
+public class Solution
+{
+    public int solution(int[] citations)
+    {
+        //h번 이상 인용된 논문이 h개 이상, 나머지가 h번 이하
+        int answer = 0;
+        int index = citations.Max();      //배열의 최댓값을 일단 부여
+        
+        while (true)
+        {
+            int count = 0;
+            for (int i = 0; i < citations.Length; i++)
+            {
+                if (citations[i] >= index)
+                {
+                    count++;
+                }
+            }
+
+            if (count >= index)         //개수와 값을 비교해서 같으면 (X), 이상(O)
+            {
+                break;
+            }
+            else                        //다르면 하나씩 줄여나가기
+            {
+                index--;
+            }
+        }
+
+        answer = index;
+        return answer;
+    }
+}*/
