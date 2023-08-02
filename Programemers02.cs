@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 namespace Programmers;
@@ -814,4 +815,95 @@ public class Solution
     }
 }*/
 
-//
+/*// 피로도---------------------------반례가 존재해서 중단, 다른 풀이 방식은 아래에
+// [최소 필요 피로도, 소모 피로도]
+// 던전 하나당 1일 1회 가능
+// 순서에 관계없이 유저가 탐험 가능한 최대 던전 수 구하기
+// 반례 k = 40 , [[40, 20], [10, 10], [10, 10], [10, 10], [10, 10]] , answer = 4
+// -> 꼭 차이가 큰 것을 우선시하는 건 맞지 않다는 증거: [10,10] 4개가 더 좋음
+public class Solution
+{
+    public int solution(int k, int[,] dungeons)
+    {
+        int length = dungeons.GetLength(0);     //2개는 일정하니 column의 길이를 구함
+        int[] need = new int[length];           //최소 필요
+        int[] waste = new int[length];          //소모
+        int[] gap = new int[length];            //차이
+
+        for (int i = 0; i < length; i++)        // 2차원 배열 각각 분리하기
+        {
+            need[i] = dungeons[i, 0];
+            waste[i] = dungeons[i, 1];
+            gap[i] = need[i] - waste[i];        //최소 - 소모: 차이가 클수록 초기 필요값이 상대적으로 많이 필요한 것이니까 이를 활용
+        }
+
+        int order = 0;                          //탐험 순서
+        int count = 0;                          //탐험 횟수
+
+        while (true)                           
+        {
+            int gapMax = gap.Max();             //차이가 가장 큰 던전 구하기
+            if( gapMax < -5) break;
+            if (k < 0) break;
+
+            for (int i = 0; i < length; i++)    //최댓값의 위치를 기억
+            {
+                if (gap[i] == gapMax)
+                {
+                    order = i;                  
+                    gap[i] = -10;
+                    break;
+                }
+            }
+
+            if (k >= need[order])               
+            {                                   
+                k -= waste[order];              
+                need[order] = 0;
+                count++;                        
+            }
+            else continue;
+        }
+
+        int answer = count;
+        return answer;
+    }
+}*/
+
+// 피로도
+// DFS(Depth First Search) 사용: 방문 여부를 확인하여 경우의 수를 모두 탐색
+public class Solution
+{
+    public bool[] visited;                      //방문여부                      
+    public int answer = 0;
+
+    public int solution(int k, int[,] dungeons)
+    {
+        //int answer = -1;
+        visited = new bool[dungeons.Length];
+        DFS(k,dungeons,visited,0);
+
+        return answer;
+    }
+
+    public int DFS(int k, int[,] dungeons, bool[] visited, int count)
+    {
+        int length = dungeons.GetLength(0);     //경우의 수
+        //1번부터 시작하여 모든 경우의 수를 다 돌아보는 방식. 이후 최대값을 찾는다
+        for(int i = 0; i < length; i++)
+        {
+            //dungeons[i, 0]: 최소 필요
+            if (k >= dungeons[i,0] && !visited[i])
+            {
+                visited[i] = true;
+
+                //dungeons[i, 1]: 소모
+                DFS(k - dungeons[i, 1], dungeons, visited, count + 1);
+                visited[i] = false;             //하나의 경우를 돌고난 후 새로운 시작을 위해 다시 false
+            }
+        }
+
+        answer = Math.Max(count,answer);        //돌때마다 최대값을 비교해서 넣기
+        return answer;
+    }
+}
