@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 
 namespace Programmers;
@@ -815,7 +814,7 @@ public class Solution
     }
 }*/
 
-/*// 피로도---------------------------반례가 존재해서 중단, 다른 풀이 방식은 아래에
+/*// 피로도 최소 - 소모 => 반례가 존재해서 중단, 다른 풀이 방식은 아래에
 // [최소 필요 피로도, 소모 피로도]
 // 던전 하나당 1일 1회 가능
 // 순서에 관계없이 유저가 탐험 가능한 최대 던전 수 구하기
@@ -870,7 +869,7 @@ public class Solution
     }
 }*/
 
-// 피로도
+/*// 피로도 DFS
 // DFS(Depth First Search) 사용: 방문 여부를 확인하여 경우의 수를 모두 탐색
 public class Solution
 {
@@ -906,4 +905,53 @@ public class Solution
         answer = Math.Max(count,answer);        //돌때마다 최대값을 비교해서 넣기
         return answer;
     }
-}
+}*/
+
+/*// 타겟넘버 DFS => 얻어걸림
+// 모든 경우의 수 구하기
+public class Solution
+{
+    int answer;
+    int count;
+
+    public int DFS(int[] numbers, int target, int index, int sum, bool plus)
+    {
+        if (index == numbers.Length)
+        {
+            if (sum == target)
+            {
+                count++;
+            }
+            answer = Math.Max(count, answer) / 2;        //돌때마다 최대값을 비교해서 넣기
+            return answer;
+        }
+
+        //방문했다면 +, 아니라면 -;
+        if (plus)
+        {
+            sum += numbers[index];
+        }
+        else
+        {
+            sum -= numbers[index];
+        }
+
+        DFS(numbers, target, index + 1, sum, true);
+        DFS(numbers, target, index + 1, sum, false);
+        //return answer;
+    }
+
+    public int solution(int[] numbers, int target)
+    {
+        answer = 0;
+        count = 0;
+        int sum = 0;
+        DFS(numbers, target, 0, sum, true);
+        DFS(numbers, target, 0, sum, false);
+
+        return answer;
+    }
+
+}*/
+
+//
