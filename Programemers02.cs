@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.Serialization.Formatters;
 
 namespace Programmers;
 
@@ -990,7 +992,7 @@ public class Solution
     }
 }*/
 
-// 게임 맵 최단거리
+/*// 게임 맵 최단거리
 class Solution
 {
     int n = 0;
@@ -1039,5 +1041,73 @@ class Solution
             return -1;
         }
         else return (maps[n - 1, m - 1]);
+    }
+}*/
+
+// 주차 요금 계산
+public class Solution
+{
+    public int ConvertToMin(string time)                        //시간 변환 00H:00M -> 000M
+    {
+        string[] t = time.Split(":");
+        return int.Parse(t[0]) * 60 + int.Parse(t[1]);
+    }
+
+    public int FindIndex(List<string> numData, string num)
+    {
+        int index = 0;
+
+        for (int i = 0; i < numData.Count; i++)
+        {
+            index++;
+            if (numData[i] == num)
+            {
+                return index;
+            }
+        }
+
+        return index;
+    }
+
+    public int[] solution(int[] fees, string[] records)
+    {
+        //fees[기본시간(분), 기본요금(원), 단위시간(분), 단위요금(원)]
+        //records["시각 차량번호 내역(IN/OUT)"," ", " "]
+
+        int[] answer = new int[] { };
+        List<string> numData = new List<string>();
+        List<string> timeData = new List<string>();
+        List<int> totalTime = new List<int>();
+
+        foreach (string rec in records)
+        {
+            string[] arr = rec.Split(' ');                      //공백 분리
+
+            if (arr[2] == "IN")
+            {
+                if (!numData.Contains(arr[1]))
+                {
+                    numData.Add(arr[1]);
+                    timeData.Add(arr[0]);
+                }
+            }
+            else    // arr[2]== "OUT"
+            {
+                int index = FindIndex(numData, arr[1]);
+
+                if (records.Contains(arr[1])) 
+                {
+                    
+                }
+                totalTime.Add(ConvertToMin(arr[1]) - ConvertToMin(timeData[index]));
+
+                numData[index] = string.Empty;
+                timeData[index] = string.Empty;
+            }
+        }
+
+
+
+        return answer;
     }
 }
