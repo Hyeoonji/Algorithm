@@ -1,5 +1,4 @@
-﻿using System.Net.NetworkInformation;
-
+﻿
 namespace Baekjoon;
 
 /*// 2557. Hello World

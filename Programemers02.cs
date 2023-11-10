@@ -1044,7 +1044,7 @@ class Solution
     }
 }*/
 
-// 주차 요금 계산
+/*// 주차 요금 계산---------------------------------------중단
 public class Solution
 {
     public int ConvertToMin(string time)                        //시간 변환 00H:00M -> 000M
@@ -1110,4 +1110,4 @@ public class Solution
 
         return answer;
     }
-}
+}*/

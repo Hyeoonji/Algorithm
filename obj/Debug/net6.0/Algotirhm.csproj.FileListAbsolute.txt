@@ -1,0 +1,4 @@
+C:\Shin\2023_2\Algorithm\obj\Debug\net6.0\Algotirhm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Shin\2023_2\Algorithm\obj\Debug\net6.0\Algotirhm.AssemblyInfoInputs.cache
+C:\Shin\2023_2\Algorithm\obj\Debug\net6.0\Algotirhm.AssemblyInfo.cs
+C:\Shin\2023_2\Algorithm\obj\Debug\net6.0\Algotirhm.csproj.CoreCompileInputs.cache

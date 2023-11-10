@@ -1,5 +1,4 @@
-﻿using System.Runtime.InteropServices;
-
+﻿
 namespace Baekjoon;
 
 /*// 10807. 개수 세기

@@ -270,23 +270,127 @@ public class Solution
     }
 }*/
 
-// 이차원 배열 대각선 순회하기 ----------------런타임 에러 발생
+/*// 이차원 배열 대각선 순회하기
 public class Solution
 {
     public int solution(int[,] board, int k)
     {
         int answer = 0;
-        for (int i = 0; i < board.Length; i++)
+        for (int i = 0; i < board.GetLength(0); i++)
         {
-            for (int j = 0; j < board.Length; j++)
+            for (int j = 0; j < board.GetLength(1); j++)
             {
                 if (i + j <= k)
                 {
                     answer += board[i, j];
                 }
-                else {  break; }
+                else { break; }
             }
         }
+        return answer;
+    }
+}
+//-----------------------------------
+//board.Length 는 전체 길이 = 행 * 열 -> 이를 사용하면 런타임 에러 발생
+//board.GetLength()를 사용해야 행 또는 열의 길이만 구할 수 있음
+//(0)은 행 / (1)은 열
+*/
+
+/*// 정사각형으로 만들기
+public class Solution
+{
+    public int[,] solution(int[,] arr)
+    {
+        int col = arr.GetLength(0); //행의 길이
+        int low = arr.GetLength(1); //열의 길이
+        int length = 0;
+
+        if (col > low) { length = col; }
+        else { length = low; }
+
+        int[,] answer = new int[length, length];
+
+        for (int i = 0; i < length; i++)
+        {
+            for (int j = 0; j < length; j++)
+            {
+                answer[i, j] = 0;           //전체 0으로 넣고난 후
+                if (i < col && j < low)     //값이 있는 경우에만 덮어쓰기
+                {
+                    answer[i, j] = arr[i, j];
+                }
+            }
+        }
+
+        return answer;
+    }
+}*/
+
+/*// 특별한 이차원 배열 2
+public class Solution
+{
+    public int solution(int[,] arr)
+    {
+        int answer = 1;
+
+        for(int i = 0; i < arr.GetLength(0); i++)
+        {
+            for(int j = 0; j < arr.GetLength(1); j++)
+            {
+                if (arr[i,j] != arr[j, i])
+                {
+                    answer = 0;
+                    break;
+                }
+            }
+        }
+
+        return answer;
+    }
+}*/
+
+// 정수를 나선형으로 배치하기
+public class Solution
+{
+    public int[,] solution(int n)
+    {
+        int[,] answer = new int[n, n];
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                answer[i, j] = 0;
+            }
+        }
+
+        int col = 0;    //행
+        int low = -1;   //열
+        int a = 1;      //값
+        int num = 1;    //방향을 바꿔줄 값
+
+        while (true)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                low += num;
+                answer[col, low] = a;
+                a++;
+            }
+
+            n--;
+            if (n <= 0) { break; }
+
+            for (int j = 0; j < n; j++)
+            {
+                col += num;
+                answer[col, low] = a;
+                a++;
+            }
+
+            num *= -1;
+        }
+
         return answer;
     }
 }
